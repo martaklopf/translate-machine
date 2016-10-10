@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "node-google-translate-free": "^0.1.0",
+    "request": "^2.75.0",
     "socket.io": "^1.4.8",
     "translate-google-free": "^0.2.0"
   }

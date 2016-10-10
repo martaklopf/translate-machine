@@ -7,14 +7,37 @@ socket.on('connect', function(data){ //when we are connected do something
 })
 
 
-socket.on('projectionWords', function(data){ //if we see a projectionRectangle message then do stuff
+socket.on('projectionWords', function(data){
   console.log(data);
 
-$("body").append("<div>" + data.content + "</div>");
-
-
+$("#newtext").append("<div>" + data + "</div>");
 
 })
+
+
+
+// socket.on('translatedWords', function(result){
+//   console.log(result);
+//
+// $("body").append("<div>" + result.content + "</div>");
+//
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // socket.on('storedTextMessage', function(spData){

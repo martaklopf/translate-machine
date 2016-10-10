@@ -1,59 +1,51 @@
-//include express package we just downloaded and make it into a variable
-
 // var languages = ["af", "ga", "sq", "it", "ar", "ja", "az", "kn", "eu", "ko", "bn", "la", "be", "lv", "bg", "lt", "ca", "mk", "zh-CN", "ms", "zh-TW", "mt", "hr", "no", "cs", "fa", "da", "pl", "nl", "pt", "en", "ro", "eo", "ru", "et", "sr", "tl", "sk", "fi", "sl", "fr", "es", "gl", "sw", "ka", "sv", "de", "ta", "el", "te", "gu", "th", "ht", "tr", "iw", "uk", "hi", "ur", "hu", "vi", "is", "cy", "id", "yi"];
+// var tar = languages[Math.floor(languages.length * Math.random())]
 
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!
-// randContent = localStorage.getItem("content");
-var trans = require('translate-google-free');
+//trnsl.1.1.20161010T221631Z.cb30aad71732ef99.335507e44d898a9e7adb84299fb50fe1e7d2481d
 
 
-
-var express = require('express') //hey we want to use express, our web host/routing system
-var app = express(); //starts express
-
-//turn on web server that node js has built in
-var server = require('http').Server( app ) // start a server instance on a port
+var express = require('express')
+var app = express();
+var request = require('request');
 
 
-//require socket
-var io = require('socket.io')(server) //use socket.io for real time connections aka. wesockets
+var server = require('http').Server( app )
+var https = require('https');
 
+var io = require('socket.io')(server)
 
-//start server so we can listen on certain port
+var translatedWord;
+
 server.listen(3000, function(){
-  console.log("server started on 3000"); //do callback when started successfully
+  console.log("server started on 3000");
 })
 
-app.use( express.static('public') ) //server out everything that is in the public folder
+app.use( express.static('public') )
 
 var storedText = [];
 
-//install web sockets, for instant communication, needs cdn on client
 
-//set up intermediary server message handler (if you get add rectangle message, we get the message)
-
-io.on('connection', function(socket){ //if socket.io sees new connection.
-console.log(socket.id) //prints out the socket that connected (ie all users + the projection)
-
-  // io.emit('storedTextMessage', storedText);
+io.on('connection', function(socket){
+console.log(socket.id)
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // trans(randContent, 'en', 'de', function(error, ret) {
-  //   if (error) throw error;
-  //   console.log(ret);
-  // });
 
-  socket.on('addWords', function(data){ //look for any massages with addRectangle
-    console.log('addWords' + data); //log out the data in this case you get true but you could use this to get any arbitrary data you want, think position, color,..
-    io.emit('projectionWords', data); //send out message to the projection to add the projection to the screen
+  socket.on('addWords', function(data){ //look for any massages with addWords
+    console.log('addWords' + data.content); //log out the data
 
+    var url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20161010T221631Z.cb30aad71732ef99.335507e44d898a9e7adb84299fb50fe1e7d2481d&text='+ data.content +'&lang=en-de'
+    request(url, function (error, response, body) {
+        if (!error && response.statusCode == 200) { //if there is no errors or it does not exist
+          var parsedBody = JSON.parse(body)
+          // console.log(parsedBody.text[0])
+          translatedWord = parsedBody.text[0]
+          io.emit('projectionWords', translatedWord); //send out message to the projection to add the projection to the screen
 
+        }
+    })
 
     storedText.push(data)
   })
 })
-
-//add rectangle and it will add rectangle randomly on projection

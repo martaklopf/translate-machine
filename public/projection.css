@@ -3,4 +3,11 @@ html, body {
   width: 100%;
   font-size: 30px;
 }
- 
+
+#newtext {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: monospace;
+
+}
