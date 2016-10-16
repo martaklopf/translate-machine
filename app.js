@@ -2,6 +2,38 @@ var languages = ["af", "ga", "sq", "it", "ar", "ja", "az", "kn", "eu", "ko", "bn
 var tar = languages[Math.floor(languages.length * Math.random())]
 
 
+//   function doSomething() {}
+//
+// (function loop() {
+//     var tar = languages[Math.floor(languages.length * Math.random())];
+//     setInterval(function() {
+//             doSomething();
+//             loop();
+//     }, tar, 10000);
+//     console.log(tar);
+// }());
+//
+// function loop() {
+//     var tar = languages[Math.floor(languages.length * Math.random())];
+//     setInterval(tar, 5000);
+//     console.log(setInterval);
+//     return tar;
+// };
+//
+// function loop() {
+//     var tar = languages[Math.floor(languages.length * Math.random())];
+//     setInterval(function() {
+//                 doSomething();
+//                 loop();
+//         }, tar, 10000);
+//     console.log(tar);
+//     return tar;
+// };
+//
+// var tar = languages[Math.floor(languages.length * Math.random())]
+//
+// setInterval(tar, 5000);
+
 
 
 //trnsl.1.1.20161010T221631Z.cb30aad71732ef99.335507e44d898a9e7adb84299fb50fe1e7d2481d

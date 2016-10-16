@@ -4,10 +4,15 @@ html, body {
   font-size: 30px;
 }
 
+@font-face {
+    font-family: circular;
+    src: url(public/lineto-circular-pro-book.ttf);
+}
+
 #newtext {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  font-family: monospace;
+  /*display: flex;*/
+  /*flex-direction: row;
+  flex-wrap: wrap;*/
+  font-family: circular, sans-serif;
 
 }

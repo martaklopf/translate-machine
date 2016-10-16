@@ -3,3 +3,85 @@ html, body {
   width: 100%;
   font-size: 30px;
 }
+
+/*@font-face {
+    font-family: circular;
+    src: url(public/lineto-circular-pro-book.ttf);
+}*/
+
+@font-face {
+    font-family: 'circular';
+    src: url('lineto-circular-pro-book.ttf') format('ttf'),
+         url('lineto-circular-pro-book.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*index.html*/
+
+textarea {
+  width: 90%;
+  height: 80%;
+  /*margin: auto;*/
+  margin: 10px;
+  padding: 10px;
+}
+
+#send {
+  height: 100px;
+  width: 300px;
+  margin: 10px;
+  font-size: 100%;
+}
+
+textarea:focus {
+    /*border: 1px solid #555;*/
+    outline: none;
+}
+
+#content2{
+
+}
+textarea {
+    font-size: 30px;
+    font-family: circular;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type=text]:textarea {
+  vertical-align: top;
+}
+
+#send {
+    background-color: blue;
+    font-family: circular;
+    border: none;
+    outline: none;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+}
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 487px) {
+  /*#send {
+      background-color: green}
+  textarea {
+      width: 50%;
+      height: 50%;
+      font-size: 80px}*/
+  #send {
+    height: 50px;
+    width: 100px;
+    font-size: 60%}
+}
