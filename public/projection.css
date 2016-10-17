@@ -14,5 +14,6 @@ html, body {
   /*flex-direction: row;
   flex-wrap: wrap;*/
   font-family: circular, sans-serif;
+  height: 100%;
 
 }
