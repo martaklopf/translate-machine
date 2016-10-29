@@ -1,10 +1,11 @@
 //connect to server
-var socket = io.connect('http://150.253.89.18:3000') //set up place for us to connect to and try to connect
+var socket = io.connect('http://192.168.1.142:3000') //set up place for us to connect to and try to connect
 
 //tell us we are connected
 socket.on('connect', function(data){ //when we are connected do something
   console.log("connected to server" + socket.id); //log out our socket id number
 })
+
 
 
 socket.on('projectionWords', function(data){
@@ -13,6 +14,9 @@ socket.on('projectionWords', function(data){
 $("#newtext").append("<div>" + data + "</div>");
 
 })
+
+// var objDiv = document.getElementById("#newtext");
+// objDiv.scrollTop = objDiv.scrollHeight;
 
 
 // window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);

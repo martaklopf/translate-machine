@@ -18,13 +18,20 @@ html, body {
 
 }
 /*index.html*/
-
+/*.boxes {
+  width: 90%;
+  height: 80%;
+}*/
 textarea {
   width: 90%;
   height: 80%;
   /*margin: auto;*/
   margin: 10px;
+  /*margin-left: 85px;
+  margin-top: 20px;*/
   padding: 10px;
+  z-index: 10px;
+  /*border: none;*/
 }
 
 #send {
@@ -47,6 +54,7 @@ textarea {
     font-family: circular;
     display: flex;
     flex-wrap: wrap;
+    z-index: 10;
 }
 
 input[type=text]:textarea {
@@ -87,3 +95,10 @@ and (max-device-width : 487px) {
     width: 100px;
     font-size: 60%}
 }
+
+/*img {
+  position: absolute;
+  width: 77%;
+  z-index: 0;
+
+}*/
