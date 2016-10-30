@@ -1,37 +1,25 @@
-html, body {
+html, body, textarea {
   height: 100%;
   width: 100%;
   font-size: 30px;
 }
 
-/*@font-face {
-    font-family: circular;
-    src: url(public/lineto-circular-pro-book.ttf);
-}*/
 
-@font-face {
-    font-family: 'circular';
-    src: url('lineto-circular-pro-book.ttf') format('ttf'),
-         url('lineto-circular-pro-book.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-
-}
-/*index.html*/
-/*.boxes {
-  width: 90%;
-  height: 80%;
-}*/
 textarea {
   width: 90%;
   height: 80%;
-  /*margin: auto;*/
   margin: 10px;
-  /*margin-left: 85px;
-  margin-top: 20px;*/
   padding: 10px;
   z-index: 10px;
-  /*border: none;*/
+  font-family: monospace;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+input[type=text]:textarea {
+  vertical-align: top;
 }
 
 #send {
@@ -41,34 +29,13 @@ textarea {
   font-size: 100%;
 }
 
-textarea:focus {
-    /*border: 1px solid #555;*/
-    outline: none;
-}
-
-#content2{
-
-}
-textarea {
-    font-size: 30px;
-    font-family: circular;
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 10;
-}
-
-input[type=text]:textarea {
-  vertical-align: top;
-}
-
-
-
 #send {
-    background-color: blue;
-    font-family: circular;
-    border: none;
+  background-color: white;
+    border: 5px solid black;
+    font-family: futura;
+    /*border: none;*/
     outline: none;
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 10px;
     box-shadow: none;
@@ -77,28 +44,15 @@ input[type=text]:textarea {
 
 body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0px;
 }
 
 @media only screen
 and (min-device-width : 375px)
 and (max-device-width : 487px) {
-  /*#send {
-      background-color: green}
-  textarea {
-      width: 50%;
-      height: 50%;
-      font-size: 80px}*/
   #send {
     height: 50px;
-    width: 100px;
+    width: 150px;
     font-size: 60%}
 }
-
-/*img {
-  position: absolute;
-  width: 77%;
-  z-index: 0;
-
-}*/

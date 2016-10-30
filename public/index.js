@@ -1,5 +1,5 @@
 //connect to server
-var socket = io.connect('http://192.168.1.142:3000') //connect to the server
+var socket = io.connect('http://localhost:3000') //connect to the server
 
 socket.on('connect', function(data){ //when connected do something
   console.log("connected to server" + socket.id); //log out our id
