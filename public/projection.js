@@ -12,9 +12,24 @@ socket.on('projectionWords', function(data){
   console.log(data);
 
 $("#newtext").append("<div>" + data + "</div>");
+// $("#newtext").scrollTop($('#messages').height())
+var $cont = $('#newtext');
+$cont[0].scrollTop = $cont[0].scrollHeight;
+
+$('.inp').keyup(function(e) {
+    if (e.keyCode == 13) {
+        $cont.append('<p>' + $(this).val() + '</p>');
+        $cont[0].scrollTop = $cont[0].scrollHeight;
+        $(this).val('');
+    }
+})
+.focus();
 
 })
 
+
+// $("#newtext").animate({ scrollTop: $(this).height() }, "slow");
+  // return false;
 // var objDiv = document.getElementById("#newtext");
 // objDiv.scrollTop = objDiv.scrollHeight;
 
