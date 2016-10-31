@@ -10,6 +10,8 @@ socket.on('connect', function(data){ //when connected do something
 // },10000); //delayTime should be written in milliseconds e.g. 1000 which equals 1 second
 
 
+
+
   var theContent;
 
   $('#send').on('click', function(){
