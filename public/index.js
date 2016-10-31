@@ -21,7 +21,7 @@ socket.on('connect', function(data){ //when connected do something
     var dataToSend = {
       'content': theContent
     }
-
+    $('textarea').val('');
     socket.emit('addWords', dataToSend)
 
 
