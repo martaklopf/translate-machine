@@ -1,5 +1,5 @@
 //connect to server
-var socket = io.connect('http://localhost:3000') //set up place for us to connect to and try to connect
+var socket = io.connect('http://150.253.89.114:3000') //set up place for us to connect to and try to connect
 
 //tell us we are connected
 socket.on('connect', function(data){ //when we are connected do something
