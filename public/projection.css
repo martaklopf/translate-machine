@@ -10,12 +10,14 @@ html, body {
 }
 body {
   background-color: #fcfcfc;
+  margin: 0px;
 }
 
 .title {
   font-family: blackletter;
   font-size: 70px;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
+  padding-top: 30px;
   display: flex;
   justify-content: space-around;
 
@@ -54,4 +56,28 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
+}
+
+.blackcovers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height:100%;
+  position: fixed;
+  margin: 0px;
+}
+
+#blackleft {
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  margin: 0px;
+}
+
+#blackright {
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  margin: 0px;
 }

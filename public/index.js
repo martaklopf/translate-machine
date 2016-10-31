@@ -5,13 +5,6 @@ socket.on('connect', function(data){ //when connected do something
   console.log("connected to server" + socket.id); //log out our id
 })
 
-// setTimeout(function(){
-//     location.reload(true);
-// },10000); //delayTime should be written in milliseconds e.g. 1000 which equals 1 second
-
-
-
-
   var theContent;
 
   $('#send').on('click', function(){
@@ -21,9 +14,7 @@ socket.on('connect', function(data){ //when connected do something
     var dataToSend = {
       'content': theContent
     }
-    $('textarea').val('');
+    $('form')[0].reset();
     socket.emit('addWords', dataToSend)
-
-
 
   });
